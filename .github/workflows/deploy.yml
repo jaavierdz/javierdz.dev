@@ -61,4 +61,4 @@ jobs:
             --restart-policy Always \
             --os-type Linux \
             --cpu 1 \
-            --memory 3 \
+            --memory 4 \

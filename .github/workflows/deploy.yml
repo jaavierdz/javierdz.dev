@@ -28,7 +28,6 @@ jobs:
             --destination nginx-site \
             --source . \
             --pattern "*" \
-            --exclude-path ".git* .github*"
 
       # 4. Recargar Nginx en el contenedor ACI (opcional, para refrescar cache)
       - name: Reload Nginx Container

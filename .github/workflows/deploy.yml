@@ -62,3 +62,4 @@ jobs:
             --os-type Linux \
             --cpu 1 \
             --memory 4 \
+            --yes

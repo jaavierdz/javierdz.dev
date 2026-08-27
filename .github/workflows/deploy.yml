@@ -55,7 +55,7 @@ jobs:
             --registry-username ${{ secrets.REGISTRY_USERNAME }} \
             --registry-password ${{ secrets.REGISTRY_PASSWORD }} \
             --dns-name-label javierdz-dev \
-            --ports 80 443 \
+            --ports 80 \
             --log-analytics-workspace ${{ secrets.WORKSPACE_ID }} \
             --log-analytics-workspace-key ${{ secrets.WORKSPACE_KEY }} \
             --restart-policy Always \

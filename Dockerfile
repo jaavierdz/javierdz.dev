@@ -9,7 +9,7 @@ RUN rm -rf /usr/share/nginx/html/*
 
 # 3. Copiar solo los archivos web a la raíz HTML de Nginx
 COPY index.html /usr/share/nginx/html/
-COPY terminal.txt /usr/share/nginx/html/
+COPY cli.txt /usr/share/nginx/html/
 # Si tienes más archivos o carpetas estáticas (assets, css, etc.), añádelos explícitamente o copia una carpeta:
 # COPY public/ /usr/share/nginx/html/
 

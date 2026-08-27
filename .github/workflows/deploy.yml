@@ -62,3 +62,12 @@ jobs:
             --os-type Linux \
             --cpu 1 \
             --memory 4
+      - name: Notify on deployment success
+        if: success()
+        run: |
+          curl \
+            -H "Title: Deploy succeded!" \
+            -H "Priority: default" \
+            -H "Tags: white_check_mark,rocket" \
+            -d "El contenedor Nginx en ACI para javierdz.dev se ha actualizado correctamente (Commit: ${{ github.sha }})." \
+            https://ntfy.sh/${{ secrets.NTFY_TOPIC }}

@@ -20,15 +20,22 @@ jobs:
 
       - name: Upload files using AzCopy
         run: |
-          # 1. Obtener SAS Token con permisos de escritura para el File Share
+          ACCOUNT_KEY=$(az storage account keys list \
+            --resource-group rg-javierdz-prod-francecentral \
+            --account-name stjavierprod \
+            --query "[0].value" \
+            --output tsv)
+
+          EXPIRY_DATE=$(date -u -d '30 minutes' '+%Y-%m-%dT%H:%MZ')
+
           SAS_TOKEN=$(az storage share generate-sas \
             --account-name stjavierprod \
+            --account-key "$ACCOUNT_KEY" \
             --name nginx-site \
-            --permissions acdlrw \
-            --expiry $(date -u -d '30 minutes' '+%Y-%m-%dT%H:%MZ') \
+            --permissions rcwdl \
+            --expiry "$EXPIRY_DATE" \
             --output tsv)
-          
-          # 2. Copiar todo ignorando explícitamente las carpetas de Git
+
           azcopy copy "./*" "https://stjavierprod.file.core.windows.net/nginx-site/?$SAS_TOKEN" \
             --recursive=true \
             --exclude-path=".git;.github"

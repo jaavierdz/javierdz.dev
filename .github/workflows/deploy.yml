@@ -59,3 +59,6 @@ jobs:
             --log-analytics-workspace ${{ secrets.WORKSPACE_ID }} \
             --log-analytics-workspace-key ${{ secrets.WORKSPACE_KEY }} \
             --restart-policy Always
+            --os-type Linux
+            --cpu 1
+            --memory 3

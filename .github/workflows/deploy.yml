@@ -24,7 +24,7 @@ jobs:
       - name: Upload files to Azure Storage File Share
         run: |
           az storage file upload-batch \
-            --account-name stjavierdrod \
+            --account-name stjavierprod \
             --destination nginx-site \
             --source . \
             --pattern "*" \

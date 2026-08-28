@@ -1,17 +1,19 @@
-# Usa la imagen ligera de Nginx
 FROM nginx:alpine
 
-# 1. Copiar primero el archivo de configuración a la ruta de Nginx
+# 1. Limpiar las configuraciones por defecto de Nginx
+RUN rm -rf /etc/nginx/conf.d/*
+
+# 2. Copiar tu configuración personalizada (default.conf)
 COPY default.conf /etc/nginx/conf.d/default.conf
 
-# 2. Limpiar el contenido por defecto de Nginx
+# 3. Limpiar la carpeta web e importar TODOS los archivos del proyecto
 RUN rm -rf /usr/share/nginx/html/*
-
-# 3. Copiar solo los archivos web a la raíz HTML de Nginx
-COPY index.html /usr/share/nginx/html/
-COPY cli.txt /usr/share/nginx/html/
-# Si tienes más archivos o carpetas estáticas (assets, css, etc.), añádelos explícitamente o copia una carpeta:
-# COPY public/ /usr/share/nginx/html/
+COPY . /usr/share/nginx/html/
+RUN rm -rf /usr/share/nginx/html/.git
+RUN rm -rf /usr/share/nginx/html/.github
+RUN rm -rf /usr/share/nginx/html/Dockerfile
+RUN rm -rf /usr/share/nginx/html/default.conf
+RUN rm -rf /usr/share/nginx/html/README.md
 
 EXPOSE 80
 

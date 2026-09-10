@@ -5,6 +5,8 @@ RUN rm -rf /etc/nginx/conf.d/*
 
 # 2. Copiar tu configuración personalizada (default.conf)
 COPY default.conf /etc/nginx/conf.d/default.conf
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 # 3. Limpiar la carpeta web e importar TODOS los archivos del proyecto
 RUN rm -rf /usr/share/nginx/html/*
@@ -17,4 +19,4 @@ RUN rm -rf /usr/share/nginx/html/README.md
 
 EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"]
+ENTRYPOINT ["/entrypoint.sh"]

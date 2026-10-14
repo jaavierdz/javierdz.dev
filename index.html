@@ -1,120 +1,125 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Javierdz.dev</title>
+    <title>Javierdz.es — Javier Rodríguez-Alarcón</title>
+    <meta name="description" content="El rincón digital de Javier Rodríguez-Alarcón: proyectos, infraestructura y aprendizaje.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="static/icono.png" type="image/png">
     <link rel="stylesheet" href="static/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <script src="static/bannerIfCat.js"></script>
+
     <div id="container">
-        <div id="top-nav">
-            <ul>
-                <li><a href="#" class="active">Inicio</a></li>
-                <li><a href="/projects">Proyectos</a></li>
-                <li><a href="/resources">Recursos</a></li>
-            </ul>
-        </div>
+        <header id="top-nav">
+            <a class="brand" href="/" aria-label="Javierdz.es, inicio">
+                <span class="brand-mark">J/</span>
+                <span>javierdz<span class="brand-dot">.dev</span></span>
+            </a>
+            <nav aria-label="Navegación principal">
+                <ul>
+                    <li><a href="/" class="active">Inicio</a></li>
+                    <li><a href="/projects">Proyectos</a></li>
+                    <li><a href="/resources">Recursos</a></li>
+                </ul>
+            </nav>
+            <span class="availability"><i></i> disponible para aprender</span>
+        </header>
 
-        <div class="content-wrapper">
-            <section class="hero">
+        <main class="content-wrapper">
+            <section class="hero" aria-labelledby="hero-title">
                 <div class="hero-copy">
-                    <p class="eyebrow">Desarrollador · Estudiante</p>
-                    <h1 class="title">&gt; Javier Rodríguez-Alarcón</h1>
-                    <h3 class="highlight"><a href="https://javierdz.dev/instagram">@jaavierdz</a></h3>
-
-                    <p class="content">
-                        Soy Javier Rodríguez, estudio el 1º curso de Desarrollo de Aplicaciones Multiplataforma.
-                        <br>
-                        Este es mi sitio web donde comparto mis <span class="highlight">proyectos</span> y las aventuras que me pasan en el mundo de la <span class="highlight">programación</span>.
-                        <br>
+                    <p class="eyebrow"><span>01</span> Hola, mundo</p>
+                    <h1 id="hero-title">Construyendo cosas<br><em>que funcionan.</em></h1>
+                    <p class="hero-intro">
+                        Soy <strong>Javier Rodríguez-Alarcón</strong>, estudiante de Desarrollo de Aplicaciones Multiplataforma.
+                        Me gusta entender cómo funciona todo por debajo y convertir ideas en proyectos reales.
                     </p>
-
-                    <div class="socials hero-socials" aria-label="Redes sociales">
-                        <a href="https://javierdz.dev/github" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
-                        <a href="https://javierdz.dev/linkedin" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
-                        <a href="https://javierdz.dev/twitter" target="_blank" rel="noopener" aria-label="Twitter">T</a>
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="#proyectos">Ver proyectos <span>↘</span></a>
+                        <a class="button button-ghost" href="https://javierdz.es/github" target="_blank" rel="noopener">GitHub <span>↗</span></a>
+                    </div>
+                    <div class="hero-meta">
+                        <span><b>01</b> desarrollador en progreso</span>
+                        <span><b>∞</b> curiosidad constante</span>
                     </div>
                 </div>
 
                 <div class="hero-visual">
+                    <div class="visual-label label-top">MAD · ES <span>✦</span></div>
                     <div class="avatar-shell">
-                        <img src="static/javier.jpeg" alt="Javier Rodríguez-Alarcón" class="profile-picture" />
+                        <div class="avatar-grid"></div>
+                        <img src="static/javier.jpeg" alt="Javier Rodríguez-Alarcón" class="profile-picture">
+                        <span class="avatar-corner corner-tl"></span>
+                        <span class="avatar-corner corner-br"></span>
                     </div>
+                    <div class="visual-label label-bottom">EST. 2023 <span class="pulse"></span></div>
                 </div>
             </section>
 
-            <section class="projects-section" id="proyectos">
+            <section class="projects-section" id="proyectos" aria-labelledby="projects-title">
                 <div class="section-heading">
-                    <h2>Proyectos destacados</h2>
+                    <div>
+                        <p class="eyebrow"><span>02</span> Lo que estoy haciendo</p>
+                        <h2 id="projects-title">Proyectos destacados<span class="accent">.</span></h2>
+                    </div>
+                    <a class="section-link" href="/projects">Todos los proyectos <span>↗</span></a>
                 </div>
 
                 <div class="projects-grid">
                     <article class="project-card card">
-                        <span class="project-type">Virtualización</span>
-                        <h3>Proxmox casero</h3>
-                        <p>
-                            Monté un entorno de virtualización doméstico con Proxmox para aprender sobre servidores, contenedores, almacenamiento y gestión de máquinas virtuales en un laboratorio personal.
-                        </p>
-                        <div class="tag-list">
-                            <span>Proxmox</span>
-                            <span>VM</span>
-                            <span>Linux</span>
+                        <div class="card-top"><span class="project-number">01</span><span class="project-type">Virtualización</span></div>
+                        <div>
+                            <h3>Proxmox casero</h3>
+                            <p>Un laboratorio doméstico para aprender servidores, contenedores, almacenamiento y máquinas virtuales a base de experimentar.</p>
+                        </div>
+                        <div class="card-bottom">
+                            <div class="tag-list"><span>Proxmox</span><span>VM</span><span>Linux</span></div>
+                            <span class="card-arrow">↗</span>
                         </div>
                     </article>
 
                     <article class="project-card card">
-                        <span class="project-type">Infraestructura</span>
-                        <h3>Infraestructura enterprise de AD y Fortinet</h3>
-                        <p>
-                            Diseñé y desplegué una infraestructura empresarial con Active Directory, políticas de seguridad y segmentación de red con Fortinet, enfocada en autenticación, control de acceso y defensa perimetral.
-                        </p>
-                        <div class="tag-list">
-                            <span>AD</span>
-                            <span>Fortinet</span>
-                            <span>Seguridad</span>
+                        <div class="card-top"><span class="project-number">02</span><span class="project-type">Infraestructura</span></div>
+                        <div>
+                            <h3>AD + Fortinet</h3>
+                            <p>Infraestructura empresarial con Active Directory, políticas de seguridad y segmentación de red enfocada en el control de acceso.</p>
+                        </div>
+                        <div class="card-bottom">
+                            <div class="tag-list"><span>AD</span><span>Fortinet</span><span>Seguridad</span></div>
+                            <span class="card-arrow">↗</span>
                         </div>
                     </article>
                 </div>
             </section>
 
-            <section class="certifications-section">
+            <section class="certifications-section" aria-labelledby="learning-title">
                 <div class="section-heading">
-                    <h2>Formación y acreditaciones</h2>
+                    <div>
+                        <p class="eyebrow"><span>03</span> Coleccionando habilidades</p>
+                        <h2 id="learning-title">Formación y acreditaciones<span class="accent">.</span></h2>
+                    </div>
                 </div>
-
                 <div class="certifications-grid">
-                    <div class="certification-item card">
-                        <span class="cert-label">GitHub Copilot</span>
-                        <img src="static/github-copilot.svg" alt="GitHub Copilot" class="cert-svg" />
-                    </div>
-                    <div class="certification-item card">
-                        <span class="cert-label">Cisco Introduction to Cybersecurity</span>
-                        <img src="static/I2CS__1_.png" alt="Cisco Introduction to Cybersecurity" class="cert-svg" />
-                    </div>
-                    <div class="certification-item card">
-                        <span class="cert-label">Java y POO desde cero</span>
-                        <img src="static/jpoo.jpg" alt="Java y POO desde cero" class="cert-svg" />
-                    </div>
-                    <div class="certification-item card">
-                        <span class="cert-label">AWS Cloud Foundations</span>
-                        <img src="static/blob.png" alt="AWS Cloud Foundations" class="cert-svg" />
-                    </div>
+                    <div class="certification-item card"><span class="cert-label">01 / GitHub Copilot</span><img src="static/github-copilot.svg" alt="GitHub Copilot" class="cert-svg"></div>
+                    <div class="certification-item card"><span class="cert-label">02 / Cybersecurity</span><img src="static/I2CS__1_.png" alt="Cisco Introduction to Cybersecurity" class="cert-svg"></div>
+                    <div class="certification-item card"><span class="cert-label">03 / Java &amp; POO</span><img src="static/jpoo.jpg" alt="Java y POO desde cero" class="cert-svg"></div>
+                    <div class="certification-item card"><span class="cert-label">04 / AWS Cloud</span><img src="static/blob.png" alt="AWS Cloud Foundations" class="cert-svg"></div>
                 </div>
             </section>
 
-            <pre class="footer">
-(Haz curl a esta web y te llevarás una sorpresa)
-&copy; Javier Rodríguez-Alarcón <script>document.write(new Date().getFullYear())</script>
-            <a href="/tos">Términos y condiciones</a> · <a href="/privacidad">Política de privacidad</a> · <a href="/cookies">Política de cookies</a>
-            </pre>
-        </div>
+            <footer class="footer">
+                <div class="footer-top"><span>¿Tienes una idea?</span><a href="https://javierdz.es/linkedin" target="_blank" rel="noopener">Hablemos <span>↗</span></a></div>
+                <div class="footer-bottom">
+                    <span>© Javier Rodríguez-Alarcón <script>document.write(new Date().getFullYear())</script></span>
+                    <span><a href="/tos">Términos</a> · <a href="/privacidad">Privacidad</a> · <a href="/cookies">Cookies</a></span>
+                </div>
+            </footer>
+        </main>
     </div>
 </body>
 </html>

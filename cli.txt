@@ -2,8 +2,8 @@
 Javier Rodríguez | Estudiante & Desarrollador
 ================================================
 
-* Web: javierdz.dev
-* GitHub: javierdz.dev/github
-* Twitter: javierdz.dev/twitter
+* Web: javierdz.es
+* GitHub: javierdz.es/github
+* Twitter: javierdz.es/twitter
 
 [*] Usa un navegador para ver la versión web

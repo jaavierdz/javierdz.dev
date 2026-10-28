@@ -1,0 +1,3 @@
+:sexo
+start
+goto :sexo

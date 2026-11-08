@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>404 — Página no encontrada | javierdz.dev</title>
+    <meta name="description" content="Esta página se ha perdido en el hiperespacio.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/icono.png" type="image/png">
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .error-page {
+            display: grid;
+            min-height: 100vh;
+            grid-template-rows: auto 1fr auto;
+        }
+        .error-main {
+            display: grid;
+            place-items: center;
+            padding: 80px 4vw;
+        }
+        .error-content {
+            position: relative;
+            width: min(720px, 100%);
+            padding: clamp(30px, 6vw, 70px);
+            border: 1px solid var(--line);
+            background: var(--surface);
+            overflow: hidden;
+        }
+        .error-content::before {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 38%;
+            height: 100%;
+            content: "";
+            opacity: .45;
+            background: repeating-linear-gradient(135deg, transparent 0 18px, rgba(216,243,107,.12) 19px 20px);
+            pointer-events: none;
+        }
+        .error-code {
+            position: relative;
+            z-index: 1;
+            margin: 0 0 18px;
+            color: var(--lime);
+            font-family: var(--mono);
+            font-size: clamp(5rem, 18vw, 11rem);
+            font-weight: 500;
+            letter-spacing: -.14em;
+            line-height: .8;
+        }
+        .error-code span { color: var(--cyan); }
+        .error-title {
+            position: relative;
+            z-index: 1;
+            max-width: 480px;
+            margin: 0 0 18px;
+            font-size: clamp(2rem, 5vw, 3.8rem);
+            font-weight: 500;
+            letter-spacing: -.08em;
+            line-height: .95;
+        }
+        .error-copy {
+            position: relative;
+            z-index: 1;
+            max-width: 440px;
+            margin-bottom: 32px;
+            color: var(--muted);
+        }
+        .error-copy strong { color: var(--text); font-weight: 500; }
+        .error-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 28px;
+            color: var(--muted);
+            font-family: var(--mono);
+            font-size: .68rem;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+        }
+        .error-status i {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--orange);
+            box-shadow: 0 0 12px var(--orange);
+        }
+        .error-footer { margin: 0 4vw; }
+        @media (max-width: 760px) {
+            .error-main { padding: 45px 0; }
+            .error-content { padding: 35px 25px; }
+            .error-content::before { width: 28%; }
+        }
+    </style>
+</head>
+<body>
+    <div id="container" class="error-page">
+        <header id="top-nav">
+            <a class="brand" href="/" aria-label="Javierdz.dev, inicio">
+                <span class="brand-mark">J/</span>
+                <span>javierdz<span class="brand-dot">.dev</span></span>
+            </a>
+            <span class="availability"><i></i> disponible para aprender</span>
+        </header>
+
+        <main class="error-main">
+            <section class="error-content" aria-labelledby="error-title">
+                <p class="eyebrow"><span>404</span> Coordenadas desconocidas</p>
+                <p class="error-code" aria-hidden="true">4<span>0</span>4</p>
+                <h1 id="error-title" class="error-title">Esta página se ha ido a por tabaco.</h1>
+                <p class="error-copy">
+                    La ruta que buscas no existe, se ha mudado o está haciendo como que compila.
+                    <strong>Volvamos a un sitio que sí funciona.</strong>
+                </p>
+                <div class="error-status"><i></i> estado: perdido en el hiperespacio</div>
+                <a class="button button-primary" href="/">Volver al inicio <span>↗</span></a>
+            </section>
+        </main>
+
+        <footer class="footer error-footer">
+            <div class="footer-bottom">
+                <span>© Javier Rodríguez-Alarcón</span>
+                <span><a href="/projects">Proyectos</a> · <a href="/resources">Recursos</a></span>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
